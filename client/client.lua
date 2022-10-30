@@ -284,16 +284,15 @@ RegisterNetEvent('qb-uwujob:Mixinguwupancake', function()
 	end)
 end)
 
-
 RegisterNetEvent('qb-uwujob:Bakinguwuchocsandy', function()
 	QBCore.Functions.GetPlayerData(function(PlayerData)
         PlayerJob = PlayerData.job
-		if PlayerData.job.onduty then 
-			QBCore.Functions.TriggerCallback('QBCore:HasItem', function(HasItem)
-				if HasItem then
+		if PlayerData.job.onduty then   
+    		QBCore.Functions.TriggerCallback('qb-uwujob:makinguwuchocsandy', function(HasItems)  
+    			if HasItems then
 					Working = true
 					LocalPlayer.state:set("inv_busy", true, true)
-					QBCore.Functions.Progressbar('pickup_sla', 'Baking uWu Chocolate Marshmallows Sandy..', 3500, false, true, {
+					QBCore.Functions.Progressbar('pickup_sla', 'Mixing uWu Savory Pancake batter..', 3500, false, true, {
 						disableMovement = true,
 						disableCarMovement = false,
 						disableMouse = false,
@@ -305,20 +304,17 @@ RegisterNetEvent('qb-uwujob:Bakinguwuchocsandy', function()
 					}, {}, {}, function() 
 						Working = false
 						LocalPlayer.state:set("inv_busy", false, true)
-						TriggerServerEvent('QBCore:Server:RemoveItem', 'uwuchocsandybatter', 1)
-    					TriggerEvent('inventory:client:ItemBox', QBCore.Shared.Items['uwuchocsandybatter'], 'remove')
-    					TriggerServerEvent('QBCore:Server:AddItem', 'uwuchocsandy', 1)
-    					TriggerEvent('inventory:client:ItemBox', QBCore.Shared.Items['uwuchocsandy'], 'add')
-
+						TriggerServerEvent('QBCore:Server:AddItem', 'uwuchocsandy', 1)
+						TriggerEvent('inventory:client:ItemBox', QBCore.Shared.Items['uwuchocsandy'], 'add')
 					end, function()
 						LocalPlayer.state:set("inv_busy", false, true)
 						QBCore.Functions.Notify('Cancelled..', 'error')
 						Working = false
 					end)
 				else
-   					QBCore.Functions.Notify('You dont have the batter to bake this', 'error')
+   					QBCore.Functions.Notify('You dont have the ingredients to make this', 'error')
 				end
-			end, 'uwuchocsandybatter')
+			end)
 		else 
 			QBCore.Functions.Notify('You must be Clocked into work', 'error')
 		end
@@ -328,12 +324,12 @@ end)
 RegisterNetEvent('qb-uwujob:Bakinguwuvanillasandy', function()
 	QBCore.Functions.GetPlayerData(function(PlayerData)
         PlayerJob = PlayerData.job
-		if PlayerData.job.onduty then 
-			QBCore.Functions.TriggerCallback('QBCore:HasItem', function(HasItem)
-				if HasItem then
+		if PlayerData.job.onduty then   
+    		QBCore.Functions.TriggerCallback('qb-uwujob:ingredients:Bakinguwuvanillasandy', function(HasItems)  
+    			if HasItems then
 					Working = true
 					LocalPlayer.state:set("inv_busy", true, true)
-					QBCore.Functions.Progressbar('pickup_sla', 'Baking uWu Vanilla Marshmallows Sandy..', 3500, false, true, {
+					QBCore.Functions.Progressbar('pickup_sla', 'Making a uwu pancake..', 3500, false, true, {
 						disableMovement = true,
 						disableCarMovement = false,
 						disableMouse = false,
@@ -345,9 +341,7 @@ RegisterNetEvent('qb-uwujob:Bakinguwuvanillasandy', function()
 					}, {}, {}, function() 
 						Working = false
 						LocalPlayer.state:set("inv_busy", false, true)
-						TriggerServerEvent('QBCore:Server:RemoveItem', 'uwuvanillasandybatter', 1)
-    					TriggerEvent('inventory:client:ItemBox', QBCore.Shared.Items['uwuvanillasandybatter'], 'remove')
-    					TriggerServerEvent('QBCore:Server:AddItem', 'uwuvanillasandy', 1)
+						TriggerServerEvent('QBCore:Server:AddItem', 'uwuvanillasandy', 1)
     					TriggerEvent('inventory:client:ItemBox', QBCore.Shared.Items['uwuvanillasandy'], 'add')
 					end, function()
 						LocalPlayer.state:set("inv_busy", false, true)
@@ -355,24 +349,25 @@ RegisterNetEvent('qb-uwujob:Bakinguwuvanillasandy', function()
 						Working = false
 					end)
 				else
-   					QBCore.Functions.Notify('You dont have the batter to bake this', 'error')
+   					QBCore.Functions.Notify('You dont have the ingredients to make this', 'error')
 				end
-			end, 'uwuvanillasandybatter')
+			end)
 		else 
 			QBCore.Functions.Notify('You must be Clocked into work', 'error')
 		end
 	end)
 end)
 
+
 RegisterNetEvent('qb-uwujob:Bakinguwucupcake', function()
 	QBCore.Functions.GetPlayerData(function(PlayerData)
         PlayerJob = PlayerData.job
-		if PlayerData.job.onduty then 
-			QBCore.Functions.TriggerCallback('QBCore:HasItem', function(HasItem)
-				if HasItem then
+		if PlayerData.job.onduty then   
+    		QBCore.Functions.TriggerCallback('qb-uwujob:ingredients:Bakinguwucupcake', function(HasItems)  
+    			if HasItems then
 					Working = true
 					LocalPlayer.state:set("inv_busy", true, true)
-					QBCore.Functions.Progressbar('pickup_sla', 'Baking uWu Cupcake..', 3500, false, true, {
+					QBCore.Functions.Progressbar('pickup_sla', 'Making a uwu pancake..', 3500, false, true, {
 						disableMovement = true,
 						disableCarMovement = false,
 						disableMouse = false,
@@ -384,9 +379,7 @@ RegisterNetEvent('qb-uwujob:Bakinguwucupcake', function()
 					}, {}, {}, function() 
 						Working = false
 						LocalPlayer.state:set("inv_busy", false, true)
-						TriggerServerEvent('QBCore:Server:RemoveItem', 'uwucupcakebatter', 1)
-    					TriggerEvent('inventory:client:ItemBox', QBCore.Shared.Items['uwucupcakebatter'], 'remove')
-    					TriggerServerEvent('QBCore:Server:AddItem', 'uwucupcake', 1)
+						TriggerServerEvent('QBCore:Server:AddItem', 'uwucupcake', 1)
     					TriggerEvent('inventory:client:ItemBox', QBCore.Shared.Items['uwucupcake'], 'add')
 					end, function()
 						LocalPlayer.state:set("inv_busy", false, true)
@@ -394,9 +387,9 @@ RegisterNetEvent('qb-uwujob:Bakinguwucupcake', function()
 						Working = false
 					end)
 				else
-   					QBCore.Functions.Notify('You dont have the batter to bake this', 'error')
+   					QBCore.Functions.Notify('You dont have the ingredients to make this', 'error')
 				end
-			end, 'uwucupcakebatter')
+			end)
 		else 
 			QBCore.Functions.Notify('You must be Clocked into work', 'error')
 		end
@@ -406,12 +399,12 @@ end)
 RegisterNetEvent('qb-uwujob:Bakinguwupancake', function()
 	QBCore.Functions.GetPlayerData(function(PlayerData)
         PlayerJob = PlayerData.job
-		if PlayerData.job.onduty then 
-			QBCore.Functions.TriggerCallback('QBCore:HasItem', function(HasItem)
-				if HasItem then
+		if PlayerData.job.onduty then   
+    		QBCore.Functions.TriggerCallback('qb-uwujob:ingredients:Bakinguwupancake', function(HasItems)  
+    			if HasItems then
 					Working = true
 					LocalPlayer.state:set("inv_busy", true, true)
-					QBCore.Functions.Progressbar('pickup_sla', 'Baking uWu Savory Pancake..', 3500, false, true, {
+					QBCore.Functions.Progressbar('pickup_sla', 'Making a uwu pancake..', 3500, false, true, {
 						disableMovement = true,
 						disableCarMovement = false,
 						disableMouse = false,
@@ -423,9 +416,7 @@ RegisterNetEvent('qb-uwujob:Bakinguwupancake', function()
 					}, {}, {}, function() 
 						Working = false
 						LocalPlayer.state:set("inv_busy", false, true)
-						TriggerServerEvent('QBCore:Server:RemoveItem', 'uwupancakebatter', 1)
-    					TriggerEvent('inventory:client:ItemBox', QBCore.Shared.Items['uwupancakebatter'], 'remove')
-    					TriggerServerEvent('QBCore:Server:AddItem', 'uwupancake', 1)
+						TriggerServerEvent('QBCore:Server:AddItem', 'uwupancake', 1)
     					TriggerEvent('inventory:client:ItemBox', QBCore.Shared.Items['uwupancake'], 'add')
 					end, function()
 						LocalPlayer.state:set("inv_busy", false, true)
@@ -433,14 +424,15 @@ RegisterNetEvent('qb-uwujob:Bakinguwupancake', function()
 						Working = false
 					end)
 				else
-   					QBCore.Functions.Notify('You dont have the batter to bake this', 'error')
+   					QBCore.Functions.Notify('You dont have the ingredients to make this', 'error')
 				end
-			end, 'uwupancakebatter')
+			end)
 		else 
 			QBCore.Functions.Notify('You must be Clocked into work', 'error')
 		end
 	end)
 end)
+
 
 --non mixing
 RegisterNetEvent('qb-uwujob:Makinguwusushi', function()

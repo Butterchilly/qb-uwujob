@@ -4,7 +4,6 @@ Citizen.CreateThread(function()
         options = {
             {
                 type = 'client',
-                targeticon = 'fas fa-eye', 
             	event = 'qb-uwujob:menu:garage',
                 icon = 'fas fa-car',
 				label = 'Uwu Garage',
@@ -65,7 +64,6 @@ Citizen.CreateThread(function()
                 event = "qb-uwujob:uwucounter1",
                 icon = "fas fa-cube",
                 label = "Uwu Counter 1",
-                targeticon = "fas fa-cube",
                 job = "uwu",
             },
 
@@ -86,7 +84,6 @@ Citizen.CreateThread(function()
                 event = "qb-uwujob:uwucounter2",
                 icon = "fas fa-cube",
                 label = "Uwu Counter 2",
-                targeticon = "fas fa-cube",
                 job = "uwu",
             },
 
@@ -108,7 +105,6 @@ Citizen.CreateThread(function()
                 event = "qb-uwujob:kitchencounter",
                 icon = "fas fa-utensil-spoon",
                 label = "Kitchen Counter",
-                targeticon = "fas fa-utensil-spoon",
                 job = "uwu",
             }
         },
@@ -125,7 +121,6 @@ Citizen.CreateThread(function()
         options = {
             {
                 type = "client",
-                targeticon = "fas fa-cube",
                 event = "qb-uwujob:FoodStorage",
                 icon = "fas fa-cube",
                 label = "Open Cold Storage",
@@ -145,7 +140,6 @@ Citizen.CreateThread(function()
         options = {
             {
                 type = "client",
-                targeticon = "fas fa-cube",
                 event = "qb-uwujob:Storage",
                 icon = "fas fa-clone",
                 label = "Open Dry Storage",
@@ -165,7 +159,6 @@ Citizen.CreateThread(function()
         options = {
             {
                 type = "client",
-                targeticon = "fas fa-fire", 
                 event = "qb-uwujob:menu:ovenstation",
                 icon = "fas fa-fire",
                 label = "Oven",
@@ -185,7 +178,6 @@ Citizen.CreateThread(function()
         options = {
             {
                 type = "client",
-                targeticon = 'fas fa-fire', 
                 event = "qb-uwujob:menu:foodstation",
                 icon = "fas fa-fire",
                 label = "Stove",
@@ -205,7 +197,6 @@ Citizen.CreateThread(function()
         options = {
             {
                 type = "client",
-                targeticon = 'fas fa-coffee', 
                 event = "qb-uwujob:menu:DrinkMenu",
                 icon = "fas fa-coffee",
                 label = "Drink Maker",
@@ -225,7 +216,6 @@ Citizen.CreateThread(function()
         options = {
             {
             type = "client",
-            targeticon = 'fas fa-blender', 
             event = "qb-uwujob:menu:mixingstation", 
             icon = "fas fa-blender",
             label = "Mixing Station",
@@ -245,7 +235,6 @@ Citizen.CreateThread(function()
         options = {
             {
                 type = "client",
-                targeticon = 'fas fa-desktop',
                 event = "qb-uwujob:menu:registermenu",
                 icon = "fas fa-desktop",
                 label = "Uwu Register 1",
@@ -265,7 +254,6 @@ Citizen.CreateThread(function()
         options = {
             {
                 type = "client",
-                targeticon = 'fas fa-desktop',
                 event = "qb-uwujob:menu:registermenu",
                 icon = "fas fa-desktop",
                 label = "Uwu Register 2",

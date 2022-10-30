@@ -135,7 +135,7 @@ QBCore.Functions.CreateCallback('qb-uwujob:ingredients:uwuchocsandy', function(s
         Player.Functions.RemoveItem('milk', 1) 
         Player.Functions.RemoveItem('flour', 1) 
         Player.Functions.RemoveItem('kittymarshmallows', 1)
-        Player.Functions.AddItem('uwuchocsandy', 1)
+        Player.Functions.AddItem('uwuchocsandybatter', 1)
         cb(true)
     else
         cb(false)
@@ -160,7 +160,7 @@ QBCore.Functions.CreateCallback('qb-uwujob:ingredients:uwuvanillasandy', functio
         Player.Functions.RemoveItem('milk', 1)
         Player.Functions.RemoveItem('flour', 1)
         Player.Functions.RemoveItem('kittymarshmallows', 1)
-        Player.Functions.AddItem('uwuvanillasandy', 1)
+        Player.Functions.AddItem('uwuvanillasandybatter', 1)
         cb(true)
     else
         cb(false)
@@ -183,7 +183,7 @@ QBCore.Functions.CreateCallback('qb-uwujob:ingredients:uwucupcake', function(sou
         Player.Functions.RemoveItem('soysauce', 1)
         Player.Functions.RemoveItem('milk', 1)
         Player.Functions.RemoveItem('flour', 1)
-        Player.Functions.AddItem('uwucupcake', 1)
+        Player.Functions.AddItem('uwucupcakebatter', 1)
         cb(true)
     else
         cb(false)
@@ -202,7 +202,7 @@ QBCore.Functions.CreateCallback('qb-uwujob:ingredients:uwupancake', function(sou
         Player.Functions.RemoveItem('salt', 1)
         Player.Functions.RemoveItem('milk', 1)
         Player.Functions.RemoveItem('flour', 1)
-        Player.Functions.AddItem('uwupancake', 1)
+        Player.Functions.AddItem('uwupancakebatter', 1)
         cb(true)
     else
         cb(false)
@@ -265,6 +265,59 @@ QBCore.Functions.CreateCallback('qb-uwujob:ingredients:uwububbletearose', functi
         cb(false)
     end
 end)
+
+QBCore.Functions.CreateCallback('qb-uwujob:ingredients:Bakinguwuvanillasandy', function(source, cb)
+    local src = source
+    local Player = QBCore.Functions.GetPlayer(src)
+    local uwuvanillasandybatter =  Player.Functions.GetItemByName('uwuvanillasandybatter')
+    if uwuvanillasandybatter  then
+        Player.Functions.RemoveItem('uwuvanillasandybatter', 1)
+        Player.Functions.AddItem('uwuvanillasandy', 1)
+        cb(true)
+    else
+        cb(false)
+    end
+end)
+
+QBCore.Functions.CreateCallback('qb-uwujob:ingredients:Bakinguwupancake', function(source, cb)
+    local src = source
+    local Player = QBCore.Functions.GetPlayer(src)
+    local uwupancakebatter =  Player.Functions.GetItemByName('uwupancakebatter')
+    if uwupancakebatter  then
+        Player.Functions.RemoveItem('uwupancakebatter', 1)
+        Player.Functions.AddItem('uwupancake', 1)
+        cb(true)
+    else
+        cb(false)
+    end
+end)
+
+QBCore.Functions.CreateCallback('qb-uwujob:ingredients:Bakinguwucupcake', function(source, cb)
+    local src = source
+    local Player = QBCore.Functions.GetPlayer(src)
+    local uwucupcakebatter =  Player.Functions.GetItemByName('uwucupcakebatter')
+    if uwucupcakebatter  then
+        Player.Functions.RemoveItem('uwucupcakebatter', 1)
+        Player.Functions.AddItem('uwucupcake', 1)
+        cb(true)
+    else
+        cb(false)
+    end
+end)
+
+QBCore.Functions.CreateCallback('qb-uwujob:makinguwuchocsandy', function(source, cb)
+    local src = source
+    local Player = QBCore.Functions.GetPlayer(src)
+    local uwuchocsandybatter =  Player.Functions.GetItemByName('uwuchocsandybatter')
+    if uwuchocsandybatter  then
+        Player.Functions.RemoveItem('uwuchocsandybatter', 1)
+        Player.Functions.AddItem('uwuchocsandy', 1)
+        cb(true)
+    else
+        cb(false)
+    end
+end)
+
 
 
 RegisterNetEvent('qb-uwujob:payment:money', function()
