@@ -1,5 +1,34 @@
 
 Citizen.CreateThread(function()
+    exports['qb-target']:AddTargetModel(`a_c_cat_01`, {
+        options = {
+            {
+                event = "qb-uwujob:client:cats",
+                icon = "fas fa-cat",
+                label = "Caress cat",
+            },
+        },
+        distance = 2.0
+    })
+
+    exports['qb-target']:AddBoxZone("uwushop",vector3(-591.1, -1058.57, 22.36), 1.2, 1, {
+        name = "uwushop",
+        heading = 0,
+        debugPoly = false,
+        minZ=21.36,
+        maxZ=23.76
+    }, {
+        options = {
+            {
+                event = "qb-uwujob:shop",
+                icon = "fas fa-edit",
+                label = "open shop ",
+                job = "uwu",
+            },
+
+        },
+        distance = 3.0
+    })
 
     exports['qb-target']:AddBoxZone("uwucounter1", vector3(-584.18, -1060.42, 22.34), 1, 1, {
         name = "uwucounter1",

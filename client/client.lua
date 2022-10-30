@@ -27,7 +27,7 @@ RegisterNetEvent('QBCore:Client:SetDuty', function(duty)
     onDuty = duty
 end)
 
-RegisterNetEvent('qb-uwu:DutyB', function()
+RegisterNetEvent('qb-uwujob:DutyB', function()
     TriggerServerEvent('QBCore:ToggleDuty')
 end)
 
@@ -80,6 +80,61 @@ RegisterNetEvent('qb-uwujob:uwuloadpallet', function()
     })
 end)
 
+CreateThread(function()
+    local spot1 = CircleZone:Create(vector3(-580.54, -1064.7, 22.79), 10.0, {
+        name="spot1",
+        debugPoly=false,
+    })
+	while true do
+		Wait(3000)
+		local plyPed = PlayerPedId()
+		local coord = GetEntityCoords(plyPed)
+		if spot1:isPointInside(coord)then
+			if not spawned then
+				spawncats()
+			end
+		end
+	end
+end)
+
+
+RegisterNetEvent('qb-uwujob:client:cats', function()
+    TriggerEvent('animations:client:EmoteCommandStart', {"mechanic3"})
+    QBCore.Functions.Progressbar('acariciar_gatos', 'HAVING PARTIES WITH THE CAT...', 5000, false, true, { -- Name | Label | Time | useWhileDead | canCancel
+        disableMovement = true,
+        disableCarMovement = true,
+        disableMouse = false,
+        disableCombat = true,
+    }, {}, {}, {}, function()
+        TriggerServerEvent('hud:server:RelieveStress', math.random(2, 4))
+        TriggerEvent('animations:client:EmoteCommandStart', {"c"})
+    end)
+end)
+
+function spawncats()
+	spawned = true
+    for key, value in pairs(Config.cats) do
+        local hash = GetHashKey('a_c_cat_01')
+        RequestModel(hash)
+        while not HasModelLoaded(hash) do
+            Citizen.Wait(10)
+        end
+        if value.sitting  == true then
+            ped = CreatePed(28, hash, value.coords.x, value.coords.y, value.coords.z - 0.9, value.coords.w, false, true)
+            DoRequestAnimSet('creatures@cat@amb@world_cat_sleeping_ground@idle_a')
+            TaskPlayAnim(ped, 'creatures@cat@amb@world_cat_sleeping_ground@idle_a', 'idle_a' ,8.0, -8, -1, 1, 0, false, false, false)
+            SetPedCanBeTargetted(ped, false)
+            SetEntityAsMissionEntity(ped, true,true)
+            SetBlockingOfNonTemporaryEvents(ped, true)
+        else
+            ped = CreatePed(28, hash, value.coords.x, value.coords.y, value.coords.z - 1.0, value.coords.w, false, true)
+            SetPedCanBeTargetted(ped, false)
+            SetEntityAsMissionEntity(ped, true,true)
+            TaskWanderStandard(ped, 0, 0)
+            SetBlockingOfNonTemporaryEvents(ped, true)
+        end
+    end
+end
 
 RegisterNetEvent('qb-uwujob:Mixinguwuchocsandy', function()
 	QBCore.Functions.GetPlayerData(function(PlayerData)
@@ -1335,7 +1390,7 @@ AddEventHandler("qb-uwujob:shop", function()
 end)
 
   
-RegisterNetEvent('qb-uwu:client:uwububbleteablueberry', function(itemName)
+RegisterNetEvent('qb-uwujob:client:uwububbleteablueberry', function(itemName)
     TriggerEvent('animations:client:EmoteCommandStart', {"bubbletea"})
     QBCore.Functions.Progressbar("drink_something", "Drinking..", 5000, false, true, {
         disableMovement = false,
@@ -1349,7 +1404,7 @@ RegisterNetEvent('qb-uwu:client:uwububbleteablueberry', function(itemName)
         TriggerServerEvent('hud:server:RelieveStress', math.random(10, 15))
     end)
 end)
-RegisterNetEvent("qb-uwu:client:misosoup", function(itemName)
+RegisterNetEvent("qb-uwujob:client:misosoup", function(itemName)
     TriggerEvent('animations:client:EmoteCommandStart', {"misosoup"})
     action = true
     QBCore.Functions.Progressbar("drink_something", "Supping some Soup..", 5500, false, true, {
@@ -1367,7 +1422,7 @@ RegisterNetEvent("qb-uwu:client:misosoup", function(itemName)
         action = false
     end)
 end)
-RegisterNetEvent("qb-uwu:client:budhabowl", function(itemName)
+RegisterNetEvent("qb-uwujob:client:budhabowl", function(itemName)
     TriggerEvent('animations:client:EmoteCommandStart', {"budhabowl"})
     action = true
     QBCore.Functions.Progressbar("eat_something", "Banging a bowl of goodness..", 5500, false, true, {
@@ -1385,7 +1440,7 @@ RegisterNetEvent("qb-uwu:client:budhabowl", function(itemName)
         action = false
     end)
 end)
-RegisterNetEvent("qb-uwu:client:uwusandy", function(itemName)
+RegisterNetEvent("qb-uwujob:client:uwusandy", function(itemName)
     TriggerEvent('animations:client:EmoteCommandStart', {"uwusandy"})
     action = true
     QBCore.Functions.Progressbar("eat_something", "uWu Icecream Mmm..", 5500, false, true, {
@@ -1402,7 +1457,7 @@ RegisterNetEvent("qb-uwu:client:uwusandy", function(itemName)
         action = false
     end)
 end)
-RegisterNetEvent("qb-uwu:client:uwusandy", function(itemName)
+RegisterNetEvent("qb-uwujob:client:uwusandy", function(itemName)
     TriggerEvent('animations:client:EmoteCommandStart', {"uwusandy"})
     action = true
     QBCore.Functions.Progressbar("eat_something", "uWu Icecream Mmm..", 5500, false, true, {
@@ -1419,7 +1474,7 @@ RegisterNetEvent("qb-uwu:client:uwusandy", function(itemName)
         action = false
     end)
 end)
-RegisterNetEvent("qb-uwu:client:uwucupcake", function(itemName)
+RegisterNetEvent("qb-uwujob:client:uwucupcake", function(itemName)
     TriggerEvent('animations:client:EmoteCommandStart', {"uwucupcake"})
     action = true
     QBCore.Functions.Progressbar("eat_something", "uWu uwucupcake Mmm..", 5500, false, true, {
