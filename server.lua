@@ -5,10 +5,7 @@ local bothupalletPrice2 = upalletPrice + bothupalletPrice
 local bentopalletPrice = Config.bentopalletPrice
 local shopearnings = LoadResourceFile("qb-uwujob", "earnings.json")
 
-
-
-
-
+---Do not touch ----
 
 QBCore.Functions.CreateUseableItem("uwupurpleplush", function(source, item)
     local Player = QBCore.Functions.GetPlayer(source)
