@@ -50,7 +50,7 @@ Config.GenderNumbers = {
 Config.upalletPrice = 600 
 Config.AllupalletPrice = 6000 
 Config.bentopalletPrice = 4200 
-Config.Fuel = 'LegacyFuel' 
+Config.Fuel = 'ps-fuel' 
 
 Config.Uwucarspawn = {
 	["uwucar"] = {

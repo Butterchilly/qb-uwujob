@@ -1,5 +1,27 @@
 
 Citizen.CreateThread(function()
+    exports['qb-target']:AddTargetModel(`csb_talcc`, {
+        options = {
+            {
+                type = 'client',
+                targeticon = 'fas fa-eye', 
+            	event = 'qb-uwujob:menu:garage',
+                icon = 'fas fa-car',
+				label = 'Uwu Garage',
+                job = 'uwu',
+                canInteract  = function(entity) -- This is the action it has to perform, this REPLACES the event and this is OPTIONAL
+                    local dist = #(GetEntityCoords(PlayerPedId()) - vector3(-601.6424, -1054.401, 22.545585))
+                    if dist > 6 then
+                        return false  -- This will return false if the entity interacted with is a player and otherwise returns true
+                    elseif dist < 7 then 
+                        return true 
+                    end
+                end,
+            },
+        },
+        distance = 2.0
+    })
+
     exports['qb-target']:AddTargetModel(`a_c_cat_01`, {
         options = {
             {
