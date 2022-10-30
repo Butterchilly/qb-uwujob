@@ -108,12 +108,12 @@ UwU Cafe job for Gabz UwU Cat Cafe map for QBCore
 ['uwugreenrareplush'] = {["name"] = "uwugreenrareplush", ["label"] = "uWu Rare Green Plush", ["weight"] = 200, ["type"] = "item", ["image"] = "uwugreenrareplush.png", ["unique"] = false, ["useable"] = true, ["shouldClose"] = true, ["combinable"] = nil, ["description"] = "Its just a uWu Plush Toy"},
 ['uwupinkrareplush'] = {["name"] = "uwupinkrareplush", ["label"] = "uWu Rare Pink Plush", ["weight"] = 200, ["type"] = "item", ["image"] = "uwupinkrareplush.png", ["unique"] = false, ["useable"] = true, ["shouldClose"] = true, ["combinable"] = nil, ["description"] = "Its just a uWu Plush Toy"},
 ```
-```
+
 ------------------------------------------------------------------------------------------------
 
 NOTE: If your not using DPEmotes for QBCore yours might be missing some fuctionality for this. The problem is not me Its your Server.
 Ive added exsports and Functions to my emote resource to work like DPEmotes for the following stuff. You can too!! 
-
+```
 --Add to dpemotes/client/animationlist.lua under DP.PropEmotes = {
 
     ["bubbletea"] = {"amb@world_human_drinking@coffee@male@idle_a", "idle_c", "", AnimationOptions =
